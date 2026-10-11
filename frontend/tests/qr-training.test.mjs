@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { initialScanState, scanReducer, initialStandard, recordStandard, standardComplete, trainingKey } from "../src/app/qr-training.ts";
+import { initialScanState, scanReducer, initialStandard, recordStandard, standardComplete, trainingKey } from "../src/lib/training/qr-training.ts";
 
 const box = { barcode: "QR-001", lotNumber: "LOT-DEMO", boxNumber: "BX-001", quantity: 24, actualWeight: 12480, standardWeightMin: 12300, standardWeightMax: 12600, leader: "Leader Demo A" };
 const scan = () => scanReducer(initialScanState, { type: "scan", code: " QR-001 ", boxes: [box] });

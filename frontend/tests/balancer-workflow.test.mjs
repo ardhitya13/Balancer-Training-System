@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { allowedHandling, handleCase, initialHandling, productRules } from "../src/app/balancer-workflow.ts";
+import { allowedHandling, handleCase, initialHandling, productRules } from "../src/lib/training/balancer-workflow.ts";
 
 const base = { notFull: false, destination: "Cartoner", result: "OK", initiallyWrapped: false };
 const run = (item, actions) => actions.reduce((state, action) => handleCase(state, action, item), initialHandling);
@@ -94,4 +94,3 @@ test("Craig quantity variants and HAV 3P are distinct from HAV 3V", () => {
   assert.equal(hav3p.carton, "Belum dirinci");
   assert.equal(productRules.find((rule) => rule.model === "HAV 3V").carton, "IK 3");
 });
-

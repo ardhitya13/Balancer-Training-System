@@ -26,10 +26,10 @@ test("frontend demo accounts, permissions, progress, scores and account resets",
   globalThis.localStorage = storage();
   globalThis.sessionStorage = storage();
   globalThis.window = new EventTarget();
-  const root = path.resolve(import.meta.dirname, "../src/app");
+  const root = path.resolve(import.meta.dirname, "../src/lib/training");
   const store = load(path.join(root, "training-store.ts"));
-  const { lessons } = load(path.join(root, "learning-content.ts"));
-  const { practiceQuestions } = load(path.join(root, "practice-data.ts"));
+  const { lessons } = load(path.resolve(root, "../../data/training/learning-content.ts"));
+  const { practiceQuestions } = load(path.resolve(root, "../../data/training/practice-data.ts"));
   assert.equal(await store.getSession(), null);
   await assert.rejects(store.login("2260156", "incorrect"));
   const participant = await store.login("2260156", "2260156");
@@ -112,7 +112,7 @@ test("frontend demo accounts, permissions, progress, scores and account resets",
   assert.equal((await store.submitAttempt(newAnswers, "revised", 1)).score, 100);
   assert.equal((await store.getLearning()).attempts.length, 2);
 
-  const { legacyStandardLesson, standardLesson } = load(path.join(root, "standard-lesson.ts"));
+  const { legacyStandardLesson, standardLesson } = load(path.resolve(root, "../../data/training/standard-lesson.ts"));
   const key = "balancer-training.frontend.v1";
   const oldData = JSON.parse(localStorage.getItem(key));
   const standardIndex = oldData.content.lessons.findIndex((lesson) => lesson.id === "standard");
