@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@theme inline {
+  --font-sans: "Segoe UI", Arial, sans-serif;
+  --font-mono: Consolas, monospace;
+}
+:root { color-scheme: light; --background: #f8faf9; --foreground: #202524; }
+* { box-sizing: border-box; letter-spacing: 0; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: "Segoe UI", Arial, sans-serif; }
+button,input,select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .5; }
+button,input,select,a { outline-offset: 4px; }
+input[type=radio],input[type=checkbox],progress { accent-color: #0f766e; }
+h1,h2,h3,strong,p,span { overflow-wrap: anywhere; }
+.brand-mark { display: inline-flex; width: 42px; height: 42px; flex-shrink: 0; align-items: center; justify-content: center; background: #0f766e; color: white; border-radius: 8px; }
+.login-screen { min-height: 100dvh; background: #f7f9f8; display: flex; flex-direction: column; }
+.login-top { padding: 24px 5%; display: flex; gap: 12px; align-items: center; border-bottom: 1px solid #e4e8e6; background: white; }
+.login-center { display: grid; place-items: center; flex: 1; padding: 48px 20px; min-height: 70dvh; }
+.login-panel { width: 100%; max-width: 420px; padding: 32px; border: 1px solid #dde4e1; border-radius: 8px; background: white; box-shadow: 0 8px 30px #173a2910; }
+.login-symbol { display: inline-flex; color: #0f766e; background: #e9f5f0; padding: 12px; border-radius: 8px; }
+.login-footer,.app-footer { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 20px 5%; font-size: 11px; color: #717a75; border-top: 1px solid #e4e8e6; }
+.form-label { display: block; font-size: 13px; font-weight: 600; }
+.form-input { display: block; width: 100%; min-width: 0; min-height: 44px; padding: 11px 12px; border: 1px solid #cbd5d0; border-radius: 5px; background: white; color: #202524; font-size: 14px; }
+.form-input:focus { border-color: #0f766e; outline: 2px solid #0f766e22; }
+.form-input.pr-12 { padding-right: 48px; }.form-input.pl-10 { padding-left: 40px; }
+.form-input:read-only { background: #f4f6f5; }
+.password-toggle { position: absolute; right: 4px; top: 3px; height: 38px; width: 38px; display: grid; place-items: center; color: #626d67; }
+.primary-button,.secondary-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 10px 16px; border-radius: 5px; font-size: 13px; font-weight: 600; }
+.primary-button { background: #0f766e; color: white; border: 1px solid #0f766e; }.primary-button:hover { background: #115e59; }
+.secondary-button { background: white; border: 1px solid #d3dbd6; }
+.form-error { color: #a12828; background: #fff1f1; border: 1px solid #f2cccc; border-radius: 5px; padding: 12px; font-size: 13px; }
+.app-shell { display: grid; grid-template-columns: 232px minmax(0,1fr); min-height: 100dvh; }
+.app-sidebar { border-right: 1px solid #e0e6e2; background: white; position: sticky; top: 0; height: 100dvh; display: flex; flex-direction: column; padding: 26px 16px; }
+.app-brand { display: flex; align-items: center; gap: 11px; padding: 0 8px; font-weight: 700; font-size: 19px; }.app-brand span:not(.brand-mark) { display: block; font-size: 9px; color: #748078; margin-top: 3px; }
+.sidebar-caption { font-size: 10px; color: #8a938e; margin: 40px 12px 14px; font-weight: 600; }
+.app-sidebar nav { display: grid; gap: 5px; }.app-sidebar nav button { display: flex; align-items: center; gap: 12px; text-align: left; padding: 12px; border-radius: 5px; font-size: 13px; color: #626d67; }.app-sidebar nav button:hover { background: #f4f7f5; }.app-sidebar nav button[aria-current] { color: #0f766e; background: #eaf5f0; font-weight: 600; }
+.sidebar-bottom { margin-top: auto; border-top: 1px solid #e8ede9; padding: 20px 12px 0; font-size: 12px; color: #7a847e; }.sidebar-bottom p { margin-top: 12px; }
+.app-main { min-width: 0; display: flex; flex-direction: column; }.app-topbar { min-height: 82px; border-bottom: 1px solid #e0e6e2; background: white; padding: 16px 36px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.profile-avatar { height: 34px; width: 34px; flex-shrink: 0; background: #fff3d6; color: #805c16; display: grid; place-items: center; border-radius: 50%; font-weight: 600; font-size: 13px; }.profile-text { min-width: 0; max-width: 200px; }.profile-text strong,.profile-text span { display: block; font-size: 12px; }.profile-text span { font-size: 10px; color: #7a847e; margin-top: 3px; }
+.icon-button { width: 36px; height: 36px; flex-shrink: 0; display: inline-grid; place-items: center; border-radius: 5px; color: #626d67; }.icon-button:hover { background: #edf3ef; }
+.app-content { padding: 36px; width: 100%; max-width: 1440px; margin: 0 auto; flex: 1; }.eyebrow { color: #0f766e; font-size: 11px; font-weight: 700; }
+.metric-band { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid #dde5df; border-bottom: 1px solid #dde5df; padding: 22px 0; }.metric-band>div { padding: 0 24px; border-right: 1px solid #dde5df; }.metric-band>div:first-child { padding-left: 0; }.metric-band>div:last-child { border: 0; }.metric-band span { font-size: 12px; color: #748078; display: block; }.metric-band strong { font-size: 30px; display: block; margin-top: 6px; font-weight: 600; }.metric-band small { font-size: 13px; font-weight: 400; color: #8a938e; }
+.continue-band { display: flex; justify-content: space-between; align-items: center; gap: 24px; border-left: 3px solid #0f766e; padding: 8px 0 8px 20px; }.continue-band>div { min-width: 0; flex: 1; }progress { width: 220px; max-width: 75%; height: 6px; border: none; border-radius: 0; }progress::-webkit-progress-bar { background: #e2e9e4; }progress::-webkit-progress-value { background: #0f766e; }
+.lesson-list { border-top: 1px solid #dfe6e1; }.lesson-list>button { display: flex; align-items: center; gap: 16px; width: 100%; border-bottom: 1px solid #e4eae6; padding: 16px 8px; }.lesson-list>button:hover { background: #edf4ef; }.lesson-number { color: #8a958d; font-size: 13px; width: 28px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.table-wrap { overflow-x: auto; width: 100%; border-top: 1px solid #dfe6e1; }.data-table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }.data-table th { color: #748078; font-size: 11px; font-weight: 500; background: #f1f5f2; }.data-table th,.data-table td { padding: 14px 16px; border-bottom: 1px solid #e4eae6; white-space: nowrap; }.data-table td:first-child { white-space: normal; min-width: 140px; max-width: 280px; overflow-wrap: anywhere; }
+.status-tag { display: inline-block; font-size: 11px; font-weight: 500; padding: 4px 8px; border-radius: 4px; }.status-ok { color: #14684e; background: #e6f4ec; }.status-muted { color: #776133; background: #fbf1d9; }.empty-state { display: flex; justify-content: center; align-items: center; gap: 12px; padding: 36px 16px; color: #8a938e; font-size: 13px; border-bottom: 1px solid #e4eae6; }
+.account-dialog { margin: auto; padding: 24px; width: 440px; max-width: calc(100% - 32px); max-height: calc(100dvh - 40px); overflow-y: auto; border: 1px solid #d3ddd5; border-radius: 8px; background: white; color: #202524; }.account-dialog::backdrop { background: #172c2466; }.mobile-nav { display: none; }
+@media(max-width:900px) { .app-shell { grid-template-columns: 196px minmax(0,1fr); }.app-sidebar { padding: 24px 10px; }.app-content { padding: 24px; }.app-topbar { padding: 16px 24px; }.app-brand { font-size: 17px; gap: 8px; } }
+@media(max-width:640px) { .app-shell { display: block; }.app-sidebar { display: none; }.mobile-nav { display: block; padding: 12px 20px 0; }.app-topbar { padding: 14px 20px; }.app-content { padding: 24px 20px; }.profile-avatar { display: none; }.profile-text { max-width: 125px; }.metric-band>div { padding: 0 10px; }.metric-band strong { font-size: 25px; }.metric-band span { min-height: 34px; font-size: 11px; }.continue-band { align-items: flex-start; flex-direction: column; gap: 16px; }.login-panel { padding: 24px; }.login-top { font-size: 14px; }.login-center { padding: 28px 16px; }.app-footer { padding: 20px; } }

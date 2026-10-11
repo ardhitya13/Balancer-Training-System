@@ -1,0 +1,15 @@
+.scene { position: relative; height: 290px; overflow: hidden; background: #f4f6f8; border-bottom: 1px solid #d4d4d8; }
+.rail { position: absolute; left: 6%; right: 6%; top: 190px; height: 16px; background: repeating-linear-gradient(90deg, #a1a1aa 0 4px, #e4e4e7 4px 22px); border: 2px solid #71717a; }
+.box { position: absolute; left: 8%; top: 70px; width: 104px; height: 120px; border: 2px solid #52525b; background: #fff; transition: left 1.2s ease-in-out; }
+.onScale { left: calc(65% - 52px); }
+.tape { position: absolute; left: 42px; top: 0; width: 18px; height: 28px; background: #cbd5e1; }
+.label { position: absolute; top: 36px; left: 8px; right: 8px; display: flex; justify-content: center; }
+.laser { position: absolute; top: 32px; left: -8px; right: -8px; height: 2px; background: #dc2626; animation: scan 1.3s ease-in-out infinite alternate; }
+.scale { position: absolute; left: calc(65% - 70px); top: 207px; width: 140px; height: 62px; border: 2px solid #71717a; border-radius: 4px; background: #e4e4e7; padding: 8px; }
+.readout { display: block; background: #172b25; color: #a7f3d0; padding: 6px; text-align: center; font: 17px monospace; }
+.paused .laser { animation-play-state: paused; }
+.control { width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #d4d4d8; border-radius: 4px; background: white; font-size: 20px; }
+.control:disabled { opacity: .35; }
+.control:focus-visible { outline: 2px solid #1d4ed8; outline-offset: 2px; }
+@keyframes scan { from { transform: translateY(0); } to { transform: translateY(67px); } }
+@media (prefers-reduced-motion: reduce) { .box { transition: none; } .laser { animation: none; top: 75px; } }
